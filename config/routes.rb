@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'cars/index'
+  get 'cars/show'
+  get 'cars/index'
+  get 'cars/new'
+  get 'cars/create'
   root to: 'pages#home'
 
   get "/cars/:id",    to: "cars#show", as: :car
