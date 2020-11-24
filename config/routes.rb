@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   post "cars",        to: "cars#create"
 
   get "bookings/new", to: "bookings#new", as: :new_booking
-  post "bookings"     to: "booking#create"
+  post "bookings",     to: "bookings#create"
 
-  get "bookings/:id/edit" to: "bookings#edit" as: :edit_bookings
-  patch "bookings/:id" to: "bookings#update"
+  get "bookings/:id/edit", to: "bookings#edit", as: :edit_bookings
+  patch "bookings/:id", to: "bookings#update"
 
-  delete "bookings/:id" to: "booking#destroy"
+  delete "bookings/:id", to: "bookings#destroy"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
