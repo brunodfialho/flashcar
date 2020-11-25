@@ -31,7 +31,7 @@
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
             <h5 class="card-price"><%= car.price %> CHF</h5>
-            <a href="#" class="btn btn-primary">Louer</a>
+        <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary"  %>
           </div>
         </div>
       </div>

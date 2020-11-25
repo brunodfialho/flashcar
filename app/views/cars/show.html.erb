@@ -1,6 +1,6 @@
 <body class="body_cars">
     <div class="card-trip">
-    <center><h1>Flashcar</h1></center>
+
     <img src="https://source.unsplash.com/random" />
     <div class="card-trip-infos">
         <h1><%= @car.name %></h1>
@@ -16,4 +16,5 @@
         <button type="button" class="btn btn-warning">LOUER</button>
     </div>
     </div>
+        <%= link_to "Retour", cars_path, class: "btn-flat"  %>
 </body>
