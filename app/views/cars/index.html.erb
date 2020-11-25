@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
 
@@ -11,15 +11,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "login", "#", class: "nav-link" %>
+        <%= link_to "login", new_user_session_path, class: "nav-link" %>
       </li>
     </ul>
   </div>
 </div>
-
 
 <div class="container">
   <div class="row">
@@ -31,7 +30,7 @@
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
             <h5 class="card-price"><%= car.price %> CHF</h5>
-            <a href="#" class="btn btn-primary">Louer</a>
+            <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
