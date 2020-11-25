@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="margin-bottom: 10px">
-  <%= link_to "#", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
 
@@ -13,26 +13,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "login", "#", class: "nav-link" %>
+        <%= link_to "login", new_user_session_path, class: "nav-link" %>
       </li>
     </ul>
   </div>
 </div>
 
-
 <div class="container">
   <div class="row">
     <% @cars.each do |car| %>
-      <div class="col-sm 4" style="width: 18rem; height: 100%"
->        <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
+      <div class="col-sm 4" style="width: 18rem; height: 100%">
+        <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
           <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
             <h5 class="card-price"><%= car.price %> CHF</h5>
+            <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
