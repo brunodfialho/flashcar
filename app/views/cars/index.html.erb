@@ -1,2 +1,40 @@
-<h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <i class="fas fa-bolt"></i>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "login", "#", class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col">
+        <div class="card mb-3" style="width: 18rem; height: 100%">
+          <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= car.name %></h5>
+            <p class="card-description"><%= car.description %></p>
+            <h5 class="card-price"><%= car.price %> CHF</h5>
+            <a href="#" class="btn btn-primary">Louer</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
