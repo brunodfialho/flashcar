@@ -32,3 +32,12 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import mapboxgl from 'mapbox-gl';
+// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+ 
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWRlbW8yMTYiLCJhIjoiY2toZW84cTBwMGFpZDMxcDVyN2VqbHpvOCJ9.xxvNK4bkuFWKfnHWcajyiw';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11'
+});
