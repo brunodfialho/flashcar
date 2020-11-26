@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="margin-bottom: 10px;">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
@@ -32,7 +32,7 @@
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
             <h5 class="card-price"><%= car.price %> CHF</h5>
-            <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary" %>
+            <%= link_to "Voir la voiture", car_path(car), class: "btn-flat" %>
           </div>
         </div>
       </div>
