@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="margin-bottom: 10px;">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
@@ -15,6 +15,9 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
+      <li>
+        <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
+      </li>
       <li class="nav-item">
         <%= link_to "login", new_user_session_path, class: "nav-link" %>
       </li>
@@ -27,7 +30,7 @@
     <% @cars.each do |car| %>
       <div class="col-sm 4" style="width: 18rem; height: 100%">
         <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
-          <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
+          <%= cl_image_tag car.photo.key, class:"card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
