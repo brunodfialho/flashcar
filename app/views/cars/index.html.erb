@@ -31,7 +31,7 @@
             <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%= car.name %></h5>
-              <p class="card-description"><%= car.description %></p>
+              <p class="card-description"><%= car.model %></p>
               <h5 class="card-price"><%= car.price %> CHF</h5>
               <%# <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary"  %'> %>
               <%= link_to "Voir la voiture", car_path(car), class: "btn-flat" %>
@@ -41,5 +41,9 @@
       <% end %>
     </div>
   </div>
-  <div id="map"></div>
+  <div 
+    id="map"
+    style="width: 600px; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
     @markers = @cars.map do |car|
-      { lat: car.latitude, lng: car.longitude }
+      { lat: car.lat, lng: car.lng }
     end
   end
 

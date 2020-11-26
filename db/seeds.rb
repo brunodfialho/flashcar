@@ -19,6 +19,6 @@ puts "Create a user"
 10.times do
   user = User.create(email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   puts "Create a car"
-  car = Car.create(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user)
+  car = Car.create(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user, lat: Faker::Address.latitude, lng: Faker::Address.longitude)
 end
 puts "Done"
