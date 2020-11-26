@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-
   get "/cars/:id",    to: "cars#show", as: :car
   get "cars",         to: "cars#index"
   get "cars/new",     to: "cars#new", as: :new_car
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   get "bookings/:id/edit", to: "bookings#edit", as: :edit_bookings
   patch "bookings/:id", to: "bookings#update"
   delete "bookings/:id", to: "bookings#destroy"
+
 
   # get "/cars/:id",          to: "cars#show", as: :car
   # get "cars",               to: "cars#index"
