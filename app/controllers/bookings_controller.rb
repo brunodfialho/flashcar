@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.all
   end
@@ -18,6 +17,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.save
     redirect_to "booking_path"
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
   end
 
   private

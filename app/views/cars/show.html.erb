@@ -37,6 +37,9 @@
         <h2><%= @car.user.first_name %></h2>
         <h2><%= @car.user.last_name %></h2>
         </div>
-        <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>
+        <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>  
+    </div>
+    </div>
+    <%= link_to "Retour", cars_path, class: "btn-flat"  %>
 </body>
 
