@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   patch "bookings/:id", to: "bookings#update"
   delete "bookings/:id", to: "bookings#destroy"
 
+
   # get "/cars/:id",          to: "cars#show", as: :car
   # get "cars",               to: "cars#index"
   # get "cars/new",           to: "cars#new", as: :new_car
