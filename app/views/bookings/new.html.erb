@@ -22,5 +22,23 @@
   </div>
 </div>
 
+<div class="card-trip">
+    <center><h1>Flashcar</h1></center>
+    <img src="https://source.unsplash.com/random" />
+    <div class="card-trip-infos">
+        <h1><%= @car.name %></h1>
+      </div>
+        <h2><%= @car.model %></h2>
+        <p><%= @car.description %></p>
+        <h2 class="card-trip-pricing"><%= @car.price %>CHF/J</h2>
+        </div>
+        <div>
+        <h2><%= @car.user.first_name %></h2>
+        <h2><%= @car.user.last_name %></h2>
+        </div>
+        <%= link_to "louer", new_booking_path, class: "btn-flat"  %>
+    </div>
+    </div>
+
 <%= render 'form' %>
 
