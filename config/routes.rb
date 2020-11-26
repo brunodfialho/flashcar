@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   patch "bookings/:id",    to: "bookings#update"
   delete "bookings/:id",   to: "bookings#destroy"
   get "my_bookings",       to: "bookings#my_bookings"
-  get "my_bookings",       to: "bookings#my_bookings"
+
 
   # get "/cars/:id",          to: "cars#show", as: :car
   # get "cars",               to: "cars#index"
@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   # delete "bookings/:id",    to: "bookings#destroy"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
