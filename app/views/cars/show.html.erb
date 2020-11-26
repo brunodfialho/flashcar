@@ -1,7 +1,7 @@
 <body class="body_cars">
     <div class="card-trip">
     <center><h1>Flashcar</h1></center>
-    <img src="https://source.unsplash.com/random" />
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
         <h1><%= @car.name %></h1>
         <div>
