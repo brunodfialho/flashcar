@@ -27,7 +27,7 @@
     <% @cars.each do |car| %>
       <div class="col-sm 4" style="width: 18rem; height: 100%">
         <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
-          <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
+          <img <%= cl_image_tag("kcgqfdtmnbtowpuuwltj") %> class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><%= car.name %></h5>
             <p class="card-description"><%= car.description %></p>
