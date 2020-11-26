@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+
+    @car = Car.find(params[:car_id])
   end
 
   def create
