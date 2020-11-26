@@ -1,12 +1,35 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <i class="fas fa-bolt"></i>
+  <% end %>
+
+  <h2>FlashCar</h2>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "login", new_user_session_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <body class="body_cars">
     <div class="card-trip">
-    <center><h1>Flashcar</h1></center>
+    <center><h1><%= @car.model %></h1></center>
     <img src="https://source.unsplash.com/random" />
     <div class="card-trip-infos">
       <%= link_to "Retour", cars_path, class: "btn-flat"  %>
         <h1><%= @car.name %></h1>
         <div>
-        <h2><%= @car.model %></h2>
+
         <p><%= @car.description %></p>
         <h2 class="card-trip-pricing"><%= @car.price %>€/J</h2>
         </div>
@@ -15,6 +38,5 @@
         <h2><%= @car.user.last_name %></h2>
         </div>
         <%= link_to "louer", new_booking_path, class: "btn-flat"  %>
-
-  </body>
+</body>
 
