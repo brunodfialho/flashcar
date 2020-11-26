@@ -24,7 +24,7 @@
 <body class="body_cars">
     <div class="card-trip" >
     <center><h1><%= @car.model %></h1></center>
-    <img src="https://source.unsplash.com/random" />
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
       <%= link_to "Retour", cars_path, class: "btn-flat"  %>
         <h1><%= @car.name %></h1>
@@ -37,7 +37,7 @@
         <h2><%= @car.user.first_name %></h2>
         <h2><%= @car.user.last_name %></h2>
         </div>
-        <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>  
+        <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>
     </div>
     </div>
     <%= link_to "Retour", cars_path, class: "btn-flat"  %>
