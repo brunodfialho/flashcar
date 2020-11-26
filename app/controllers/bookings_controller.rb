@@ -14,6 +14,10 @@ class BookingsController < ApplicationController
     redirect_to bookings_index_path
   end
 
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
+  end
+
   private
 
   def booking_params

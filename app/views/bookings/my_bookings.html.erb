@@ -1,9 +1,10 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
 
-  <h2>FlashCar</h2>
+  <h2><center>FlashCar</center></h2>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -25,20 +26,21 @@
   </div>
 </div>
 
+<h1><center>My Bookings<center></h1>
+
 <div class="container">
-  <div class="row">
-    <% @cars.each do |car| %>
-      <div class="col-sm 4" style="width: 18rem; height: 100%">
-        <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
-          <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= car.name %></h5>
-            <p class="card-description"><%= car.description %></p>
-            <h5 class="card-price"><%= car.price %> CHF</h5>
-            <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary" %>
-          </div>
-        </div>
-      </div>
+  <ul>
+    <% @bookings.each do |booking| %>
+    <li><%= booking %></li>
     <% end %>
-  </div>
+  </ul>
+
+
+
+
+
+
+
+
 </div>
+
