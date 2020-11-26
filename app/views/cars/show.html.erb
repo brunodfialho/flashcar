@@ -1,24 +1,19 @@
 <body class="body_cars">
-    <div class="card-trip">
-
+  <div class="card-trip">
     <img src="https://source.unsplash.com/random" />
-    <div class="card-trip-infos">
+      <div class="card-trip-infos">
         <h1><%= @car.name %></h1>
-        <div>
-        <h2><%= @car.model %></h2>
-        <p><%= @car.description %></p>
-        <h2 class="card-trip-pricing"><%= @car.price %>€/J</h2>
-        </div>
-        <div>
-        <h2><%= @car.user.first_name %></h2>
-        <h2><%= @car.user.last_name %></h2>
-        </div>
-        <button type="button" class="btn btn-warning">LOUER</button>
-    </div>
-    </div>
-<<<<<<< HEAD
-        <%= link_to "Retour", cars_path, class: "btn-flat"  %>
-=======
-    <%= link_to "Retour", cars_path, class: "btn-flat"  %>
->>>>>>> 1e3030b961a88dbf3656d490606201c58aa450f2
+          <div>
+            <h2><%= @car.model %></h2>
+            <p><%= @car.description %></p>
+            <h2 class="card-trip-pricing"><%= @car.price %>€/J</h2>
+          </div>
+          <div>
+            <h2><%= @car.user.first_name %></h2>
+            <h2><%= @car.user.last_name %></h2>
+          </div>
+        <%= link_to "LOUER",'#', class: "btn btn-warning"  %>
+      </div>
+  </div>
+  <%= link_to "Retour", cars_path, class: "btn-flat"  %>
 </body>

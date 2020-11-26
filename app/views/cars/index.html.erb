@@ -22,24 +22,24 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @cars.each do |car| %>
-      <div class="col-sm 4" style="width: 18rem; height: 100%">
-        <div class="card mb-4" style="width: 18rem; height: 100% padding: 5px 5px 5px 5px">
-          <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= car.name %></h5>
-            <p class="card-description"><%= car.description %></p>
-            <h5 class="card-price"><%= car.price %> CHF</h5>
-<<<<<<< HEAD
-        <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary"  %>
-=======
-            <%= link_to "Voir la voiture", car_path(car), class: "btn-flat" %>
->>>>>>> 1e3030b961a88dbf3656d490606201c58aa450f2
+<div id="index-container">
+  <div class="container">
+    <div id="cards" class="row">
+      <% @cars.each do |car| %>
+        <div class="col-6 card-container">
+          <div class="card mb-4 card-car">
+            <img src="https://media.ed.edmunds-media.com/audi/a7/2020/oem/2020_audi_a7_sedan_prestige-55-tfsi-quattro_fq_oem_1_815.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= car.name %></h5>
+              <p class="card-description"><%= car.description %></p>
+              <h5 class="card-price"><%= car.price %> CHF</h5>
+              <%# <%= link_to "Voir la voiture", car_path(car), class: "btn btn-primary"  %'> %>
+              <%= link_to "Voir la voiture", car_path(car), class: "btn-flat" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWRlbW8yMTYiLCJhIjoiY2toNmM3ZjVjMDdoYTJ0bDJjcHJhcXc2byJ9._7FFZl5uLdCQmf7xg8WJ-w'>
 </div>
