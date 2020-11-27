@@ -33,7 +33,11 @@ gem 'faker'
 
 # devise
 gem 'devise'
-gem 'faker'
+
+#geocoder
+gem 'geocoder'
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
