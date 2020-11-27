@@ -17,7 +17,12 @@ class BookingsController < ApplicationController
     car = Car.find(params[:car_id])
     @booking.car = car
     @booking.user = current_user
-    @booking.total_price = (@booking.date_end - @booking.date_begin).to_i * @booking.car.price.to_i
+    @checkin = params["booking"]["date_begin"].to_date
+    @checkout = params["booking"]["date_end"].to_date
+    @rental_days = (@checkout - @checkin).to_i
+    @total_rent = @rental_days * car.price
+    @booking.total_price = @total_rent
+    # @booking.total_price = (@booking.date_end - @booking.date_begin).to_i * @booking.car.price.to_i
     if @booking.save
       redirect_to my_bookings_path
     else
