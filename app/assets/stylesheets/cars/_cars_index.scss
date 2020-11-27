@@ -1,9 +1,20 @@
 #index-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
+#cards {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
 
-// .cards-container .cards{
-//   flex-grow: 1;
-//   padding: 1px;
-// }
+#map {
+  height: 100vh;
+}
+
+img.card-img-top {
+  height: 191px;
+}
