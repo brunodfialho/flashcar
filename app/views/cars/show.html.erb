@@ -25,7 +25,7 @@
 </div>
 
 <body class="body_cars">
-
+  <%= link_to "Retour", cars_path, class: "btn-flat link-return"  %>
   <div class="card-trip">
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
@@ -42,7 +42,7 @@
         <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>
       </div>
   </div>
-  <%= link_to "Retour", cars_path, class: "btn-flat"  %>
+
 
 </body>
 
