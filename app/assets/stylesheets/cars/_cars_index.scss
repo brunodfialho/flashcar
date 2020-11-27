@@ -1,9 +1,37 @@
 #index-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
+#cards {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
 
-// .cards-container .cards{
-//   flex-grow: 1;
-//   padding: 1px;
-// }
+#card-card {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.card-description {
+  margin-top: 30px;
+}
+
+.card-price {
+  margin-bottom: 30px;
+}
+
+#map {
+  height: 100vh;
+}
+
+img.card-img-top {
+  height: 191px;
+}
