@@ -30,28 +30,30 @@ photo_urls = [
 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-land-rover-range-rover-sport-mmp-1-1595270011.jpg?crop=0.997xw:0.787xh;0,0.137xh&resize=1200:*"
 ]
 
+address = [
+  "Route de la Capite 70, 1253 Vandœuvres, Suisse",
+  "Schluhmattstrasse 55, 3920 Zermatt, Suisse",
+  "Via Gioacchino Respini, 6600 Locarno, Suisse",
+  "Schönriedstrasse 74, 3792 Saanen, Suisse",
+  "Avenue des Champs-Montants 2, 2074 Neuchâtel, Suisse",
+  "Route du Signal 2, 1018 Lausanne, Suisse",
+  "Denkmalstrasse 4, 6002 Luzern, Suisse",
+  "Zürichbergstrasse 221, 8044 Zürich, Suisse",
+  "Marktstrasse 8, 8501 Frauenfeld, Suisse",
+  "Via Nova 15, 7017 Flims Dorf, Suisse"
+]
+
 10.times do
   user = User.create(email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   puts "Create a car"
 
   file = URI.open(photo_urls.first)
-  car = Car.new(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user, lat: Faker::Address.latitude, lng: Faker::Address.longitude)
+  file_address = address.first
+  car = Car.new(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user, address: file_address)
   car.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
   car.save!
   photo_urls.delete_at(0)
+  address.delete_at(0)
 
 end
 puts "Done"
-
-
-
- #      t.string   :key,        null: false
- #      t.string   :filename,   null: false
- #      t.string   :content_type
- #      t.text     :metadata
- #      t.bigint   :byte_size,  null: false
- #      t.string   :checksum,   null: false
- #      t.datetime :created_at, null: false
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-# article = Article.new(title: 'NES', body: "A great console")
-# article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
