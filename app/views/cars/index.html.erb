@@ -27,13 +27,15 @@
     <% @cars.each do |car| %>
       <div class="card card-car">
         <%= cl_image_tag car.photo.key, crop: :fill, class:"card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= car.name %></h5>
-          <p class="card-description"><%= car.model %></p>
-        </div>
-        <div class="card-body">
-          <h5 class="card-price"><%= car.price %> CHF</h5>
-          <%= link_to "Découvrir", car_path(car), class: "btn-flat" %>
+        <div id="card-card">
+          <div class="card-body">
+            <h5 class="card-title"><%= car.name %></h5>
+            <p class="card-description"><%= car.model %></p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-price"><%= car.price %> CHF</h5>
+            <%= link_to "Découvrir", car_path(car), class: "btn-flat" %>
+          </div>
         </div>
       </div>
     <% end %>
