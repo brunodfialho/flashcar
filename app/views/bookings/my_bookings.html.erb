@@ -1,27 +1,26 @@
+<div>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <i class="fas fa-bolt"></i>
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <i class="fas fa-bolt" style=" padding-right: 6px"></i>
+  </li>
+  <li>
+    FlashCar
+  </li>
+</ul>
   <% end %>
-
-  <h2><center>FlashCar</center></h2>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-      <li>
-        <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-    </ul>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "louer", cars_path, class: "dropdown-item" %>
+          <%= link_to "mes résérvations", my_bookings_path, class: "dropdown-item" %>
+        </div>
   </div>
 </div>
 
@@ -45,7 +44,7 @@
           <% end %>
     </div>
           <%# <center><p><%= @car.description %></p><center>
-    
+
     <%# <p><%= booking.car.name %></p>
     <%# <p><%= booking.car.model %></p>
     <%# <p><%= booking.date_begin %></p>
