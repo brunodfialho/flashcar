@@ -33,11 +33,13 @@ photo_urls = [
 10.times do
   user = User.create(email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   puts "Create a car"
+
   file = URI.open(photo_urls.first)
-  car = Car.new(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user)
+  car = Car.new(name: Faker::Vehicle.make, description: "A louer", price: Faker::Commerce.price(range: 20..70, as_string: true), model: Faker::Vehicle.model, user: user, lat: Faker::Address.latitude, lng: Faker::Address.longitude)
   car.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
   car.save!
   photo_urls.delete_at(0)
+
 end
 puts "Done"
 
