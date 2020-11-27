@@ -2,10 +2,13 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
   <% end %>
+
   <h2>FlashCar</h2>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -18,25 +21,20 @@
   </div>
 </div>
 
-<body class="body_cars">
-
-  <div class="card-trip">
+  <div class="card-trip" >
+    <div>
+    <center><h1><%= @car.model %></h1>
+      <h1><%= @car.name %></h1></center>
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-trip-infos">
-        <h1><%= @car.name %></h1>
-          <div>
-            <h2><%= @car.model %></h2>
-            <p><%= @car.description %></p>
-            <h2 class="card-trip-pricing"><%= @car.price %>€/J</h2>
-          </div>
-          <div>
-            <h2><%= @car.user.first_name %></h2>
-            <h2><%= @car.user.last_name %></h2>
-          </div>
-        <%= link_to "louer", new_car_booking_path(@car), class: "btn-flat"  %>
-      </div>
-  </div>
-  <%= link_to "Retour", cars_path, class: "btn-flat"  %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @car.user.first_name %></h2>
+        <h2><%= @car.user.last_name %></h2>
 
-</body>
+      </div>
+        <h2 class="card-trip-pricing"><%= @car.price %>€/J</h2>
+        </div>
+          <center><p><%= @car.description %></p><center>
+
+<%= render "form" %>
 
