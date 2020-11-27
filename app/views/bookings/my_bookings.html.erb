@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-bolt"></i>
@@ -28,37 +29,34 @@
 <h1><center>My Bookings<center></h1>
 
 
- <div class="card-trip" >
-    <div>
-    <% @bookings.each do |booking| %>
-      <center><h1><%= booking.car.name %></h1>
-      <h1><%= booking.car.model %></h1></center>
-      <center><%= cl_image_tag booking.car.photo.key, height: 100, width: 150, crop: :fill %><center>
-       <div class="card-trip-infos">
-         <div>
-          <h2><%= booking.date_begin %></h2>
-          <h2><%= booking.date_end %></h2>
-
-         </div>
-          <h2>Total Price:</h2>
-          <h2 class="card-trip-pricing"><%= booking.total_price %>€/J</h2>
-          <% end %>
+  <div class="container">
+    <div id="cards" class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-4 card-container">
+          <div class="card mb-4 card-car">
+          <%= cl_image_tag booking.car.photo.key, height: 200, width: 360, crop: :fill %>
+            <div class="card-body">
+               <h1><%= booking.car.name %></h1>
+              <h1 class="card-description"><%= booking.car.model %></h1>
+              <h5 class="card-price"><%= booking.car.price %> CHF/J</h5>
+              <h5>From:</h5>
+              <p><%= booking.date_begin %></p>
+              <h5>To:</h5>
+              <p><%= booking.date_end %></p>
+              <h3>Total Price:</h3>
+              <h4 class="card-price"><%= booking.total_price %>€</h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-          <%# <center><p><%= @car.description %></p><center>
+  </div>
+          <%# <center><p><%= @car.description</p> %>
     
-    <%# <p><%= booking.car.name %></p>
-    <%# <p><%= booking.car.model %></p>
-    <%# <p><%= booking.date_begin %></p>
-    <%# <p><%= booking.date_end %></p>
-    <%# <p><%= booking.total_price %></p>
+    <%# <p><%= booking.car.name %>
+    <%# <p><%= booking.car.model %>
+    <%# <p><%= booking.date_begin %>
+    <%# <p><%= booking.date_end %>
+    <%# <p><%= booking.total_price %>
     <%# <% end %>
-
-
-
-
-
-
-
-
-</div>
-
+  
